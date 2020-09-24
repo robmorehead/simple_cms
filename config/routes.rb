@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   root "demo#index"
   
   resources :subjects do
@@ -10,7 +9,24 @@ Rails.application.routes.draw do
     end
 
   end
+
+  resources :pages do
+
+    # delete is optional
+    member do
+      get :delete
+    end
+
+  end
   
+  resources :sections do
+
+    # delete is optional
+    member do
+      get :delete
+    end
+
+  end
 
   get 'example/test'
   get 'example/record'
